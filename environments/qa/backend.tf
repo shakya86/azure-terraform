@@ -1,11 +1,11 @@
 terraform {
- required_providers {
-   azurerm = {
-     source  = "hashicorp/azurerm"
-     version = "4.71.0"
-   }
- }
- 
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.71.0"
+    }
+  }
+
 
   backend "azurerm" {
     resource_group_name  = "rg-tfstate"
@@ -17,8 +17,8 @@ terraform {
     use_azuread_auth = true
   }
 
- 
+
 }
- provider "azurerm" {
-    features {}
-  }
+provider "azurerm" {
+  features {}
+}
