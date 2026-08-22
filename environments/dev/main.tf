@@ -1,7 +1,7 @@
 module "resource_group" {
   source = "../../modules/resource-group"
 
-  name     = "rg-app-dev"
+  name     = "rg-app-devnew"
   location = var.location
 
   tags = {
