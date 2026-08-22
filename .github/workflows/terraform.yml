@@ -47,7 +47,13 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
-
+      - name: Check Azure Variables
+        shell: bash
+        run: |
+         echo "Environment: ${{ inputs.environment || 'dev' }}"
+         echo "CLIENT_ID configured: ${{ vars.AZURE_CLIENT_ID != '' }}"
+         echo "TENANT_ID configured: ${{ vars.AZURE_TENANT_ID != '' }}"
+         echo "SUBSCRIPTION_ID configured: ${{ vars.AZURE_SUBSCRIPTION_ID != '' }}"
 
       - name: Azure Login
         uses: azure/login@v2
