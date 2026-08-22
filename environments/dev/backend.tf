@@ -1,18 +1,18 @@
 terraform {
- required_providers {
-   azurerm = {
-     source  = "hashicorp/azurerm"
-     version = "4.71.0"
-   }
- }
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.71.0"
+    }
+  }
   backend "azurerm" {
     resource_group_name  = "rg-tfstate"
     storage_account_name = "stterraformprodpk"
     container_name       = "tfstate"
     key                  = "dev.tfstate"
 
-    use_oidc          = true
-    use_azuread_auth  = true
+    use_oidc         = true
+    use_azuread_auth = true
   }
 }
 
