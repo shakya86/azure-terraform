@@ -34,7 +34,9 @@ jobs:
     name: Terraform Plan
 
     runs-on: ubuntu-latest
-
+    
+    environment:
+      name: ${{ inputs.environment || 'dev' }}
     defaults:
       run:
         working-directory: environments/${{ inputs.environment || 'dev' }}
